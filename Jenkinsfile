@@ -6,6 +6,7 @@ pipeline {
 		sh '''
 		 docker info
 		 docker version
+		 yum install docker-compose-plugin
 		 docker-compose version
 		 curl --version
 		 jq --version
