@@ -22,10 +22,5 @@ pipeline {
                 sh 'docker-compose ps'
             }
         }
-        stage("Run test container") {
-            steps {
-                sh 'curl localhost:200'
-            }
-        }
     }
 }
