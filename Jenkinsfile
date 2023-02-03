@@ -1,15 +1,12 @@
 pipeline {
     agent any
-    environment {
-        PATH = "$PATH:/usr/local/bin"
-    }
     stages {
 	stage("verify tooling") {
 	    steps {
 		sh '''
 		 docker info
 		 docker version
-		 docker-compose version
+		 /usr/local/bin/docker-compose version
 		 curl --version
 		 jq --version
 		 '''
@@ -17,8 +14,8 @@ pipeline {
 	}
         stage("Start container") {
             steps {
-                sh 'docker-compose up -d'
-                sh 'docker-compose ps'
+                sh '/usr/local/bin/docker-compose up -d'
+                sh '/usr/local/bin/docker-compose ps'
             }
         }
         stage("Run test container") {
