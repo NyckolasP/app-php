@@ -5,7 +5,7 @@ services:
   image: tutum/apache-php
   hostname: web-php
   ports:
-   - '8080:8080'
+   - '200:8080'
   volumes:
    - ./php-data:/var/www/html/
   networks:
