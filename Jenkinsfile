@@ -18,13 +18,13 @@ pipeline {
 	}
         stage("Start container") {
             steps {
-                sh 'docker-compose up -d --no-color --wait'
+                sh 'docker-compose up -d'
                 sh 'docker-compose ps'
             }
         }
         stage("Run test container") {
             steps {
-                sh 'curl http://localhost:200'
+                sh 'curl localhost:200'
             }
         }
     }
