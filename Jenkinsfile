@@ -16,7 +16,7 @@ pipeline {
 		sh 'docker system prune -a --volumes -f'
 	    }
 	}
-        stage("Start container") {
+        stage("Update and Deploy") {
             steps {
                 sh 'docker-compose up -d'
                 sh 'docker-compose ps'
