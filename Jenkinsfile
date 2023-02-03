@@ -24,7 +24,7 @@ pipeline {
         }
         stage("Run test container") {
             steps {
-                sh 'curl localhost:8080'
+                sh 'curl localhost:200'
             }
         }
     }
