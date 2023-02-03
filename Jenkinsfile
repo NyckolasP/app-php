@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-	stage('test') {
-            steps {
-	      PATH = "$PATH:/usr/local/bin"
-	      sh 'echo PATH'
-	    }
-        }
 	stage("verify tooling") {
 	    steps {
 		sh '''
