@@ -19,7 +19,7 @@ pipeline {
         }
         stage("Run test container") {
             steps {
-                sh 'curl localhost:200/create_db.php'
+                sh 'curl localhost:200'
             }
         }
     }
