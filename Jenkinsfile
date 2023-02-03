@@ -6,7 +6,7 @@ pipeline {
 		sh '''
 		 docker info
 		 docker version
-		 /usr/local/bin/docker-compose version
+		 docker-compose version
 		 curl --version
 		 jq --version
 		 '''
@@ -14,8 +14,8 @@ pipeline {
 	}
         stage("Start container") {
             steps {
-                sh '/usr/local/bin/docker-compose up -d'
-                sh '/usr/local/bin/docker-compose ps'
+                sh 'docker-compose up -d'
+                sh 'docker-compose ps'
             }
         }
         stage("Run test container") {
