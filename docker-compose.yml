@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+ web:
+  image: tutum/apache-php
+  hostname: web-php
+  ports:
+   - '200:80'
+  volumes:
+   - ./php-data:/var/www/html/
+  networks:
+   - frontend
+   - backend
+
+ mysql:
+  image: mariadb
+  hostname: mariadb
+  volumes:
+   - ./db-data:/var/lib/mysql
+  environment:
+   - MARIADB_ROOT_PASSWORD=root
+  networks:
+   - backend
+
+networks:
+ frontend:
+ backend:
